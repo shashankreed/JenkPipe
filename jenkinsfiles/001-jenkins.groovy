@@ -20,6 +20,7 @@ pipeline {
       }
     }
 stage('build') {
+    steps {
             properties {
       githubProjectUrl("https://bitbucket.org/tekion/tappointment/")
     }
@@ -29,7 +30,6 @@ stage('build') {
         daysToKeep(2)
         numToKeep(2)
       }
-    steps {
     withEnv(['VAR1=VALUE ONE',
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',

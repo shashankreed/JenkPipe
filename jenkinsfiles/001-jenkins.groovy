@@ -1,15 +1,6 @@
 pipeline {
   agent any
   stages {
-	    properties {
-      githubProjectUrl("https://bitbucket.org/tekion/tappointment/")
-    }  
-   jdk('System')
-  
-      logRotator {
-        daysToKeep(2)
-        numToKeep(2)
-      }
     stage('Stage 1') {
       steps {
         script {
@@ -29,6 +20,15 @@ pipeline {
       }
     }
 stage('build') {
+            properties {
+      githubProjectUrl("https://bitbucket.org/tekion/tappointment/")
+    }
+   jdk('System')
+
+      logRotator {
+        daysToKeep(2)
+        numToKeep(2)
+      }
     steps {
     withEnv(['VAR1=VALUE ONE',
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',

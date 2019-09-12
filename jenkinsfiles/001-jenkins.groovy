@@ -19,7 +19,12 @@ pipeline {
         }
       }
     }
-stage('build') {
+stage('build1') {
+	steps{
+	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', relativeTargetDir: 'tekionbuild'
+}
+}
+stage('build2') {
     steps {
       git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha'
     withEnv(['VAR1=VALUE ONE',

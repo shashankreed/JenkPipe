@@ -23,7 +23,6 @@ pipeline {
 stage('build') {
     steps {
     withEnv(['VAR1=VALUE ONE',
-             "VAR2=${someGroovyVar}",
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',
 	     'REGION_NAME=us-west-1',
@@ -32,7 +31,6 @@ stage('build') {
         sh '''
 	echo $VAR1
         echo $AWS_CLUSTER_NAME
-	echo $VAR2
 	'''
     }
 }

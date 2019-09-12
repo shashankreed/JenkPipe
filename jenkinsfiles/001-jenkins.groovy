@@ -1,5 +1,6 @@
 pipeline {
   agent any
+stages {
 stage('build1') {
 	steps{
 	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master'
@@ -19,6 +20,7 @@ stage('build2') {
         echo $AWS_CLUSTER_NAME
 	'''
     }
+}
 }
 }
 }

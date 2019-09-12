@@ -21,7 +21,7 @@ pipeline {
     }
 stage('build1') {
 	steps{
-	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master'
+	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master', path: 'tekionbuild'
 }
 }
 stage('build2') {

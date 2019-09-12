@@ -1,24 +1,5 @@
 pipeline {
   agent any
-  stages {
-    stage('Stage 1') {
-      steps {
-        script {
-          echo 'Stage 1'
-        }
-      }
-    }
-
-    stage('Stage 2') {
-      steps {
-        script {
-	sh '''
-         pwd
-	ls 
-	'''
-        }
-      }
-    }
 stage('build1') {
 	steps{
 	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master', extensions: [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']
@@ -26,7 +7,8 @@ stage('build1') {
 }
 stage('build2') {
     steps {
-      git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha', branch: 'b7U'
+     // git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha', branch: 'b7U'
+        checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'smganesha', url: 'https://bitbucket.org/tekion/tfees.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tfees']], submoduleCfg: []])
     withEnv(['VAR1=VALUE ONE',
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',

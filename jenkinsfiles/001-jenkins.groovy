@@ -13,8 +13,10 @@ pipeline {
     stage('Stage 2') {
       steps {
         script {
+	sh '''
          pwd
 	ls 
+	'''
         }
       }
     }

@@ -5,7 +5,7 @@ stage('build1') {
 	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master', extensions: [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']
 }
 }
-*/
+/*
 stage('build2') {
     steps {
       git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha', branch: 'b7U'

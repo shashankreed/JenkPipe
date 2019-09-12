@@ -2,10 +2,9 @@ pipeline {
   agent any
 stage('build1') {
 	steps{
-	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master', extensions: [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']
+	git url: "https://bitbucket.org/tekion/tekionbuild.git", credentialsId: 'smganesha', branch: 'master'
 }
 }
-/*
 stage('build2') {
     steps {
       git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha', branch: 'b7U'
@@ -23,5 +22,4 @@ stage('build2') {
     }
 }
 }
-*/
 }

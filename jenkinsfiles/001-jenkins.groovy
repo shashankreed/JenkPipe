@@ -36,4 +36,18 @@ stage('build') {
 }
 }
   }
+    configure { project ->
+    project / publishers << 'jenkins.plugins.slack.SlackNotifier' {
+      baseUrl("https://whatever.slack.com/services/hooks/jenkins-ci/")
+      room("#room")
+      notifyAborted(true)
+      notifyEveryFailure(true)
+      notifyNotBuilt(true)
+      notifySuccess(true)
+      notifyUnstable(true)
+      notifyRegression(true)
+      notifyBackToNormal(true)
+      startNotification(true)
+    }
+  }
 }

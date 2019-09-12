@@ -21,7 +21,7 @@ pipeline {
     }
 stage('build') {
     steps {
-      git url:"https://bitbucket.org/tekion/tappointment/", credentialsId: 'smganesha'
+      git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha'
     withEnv(['VAR1=VALUE ONE',
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',

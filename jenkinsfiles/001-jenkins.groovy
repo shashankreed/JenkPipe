@@ -23,7 +23,7 @@ pipeline {
 stage('build') {
     def someGroovyVar = 'Hello world'
     withEnv(['VAR1=VALUE ONE',
-             "VAR2=${someGroovyVar}"
+             "VAR2=${someGroovyVar}",
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',
 	     'REGION_NAME=us-west-1',

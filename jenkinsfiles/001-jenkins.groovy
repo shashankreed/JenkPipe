@@ -22,7 +22,6 @@ pipeline {
     }
 stage('build') {
     steps {
-    def someGroovyVar = 'Hello world'
     withEnv(['VAR1=VALUE ONE',
              "VAR2=${someGroovyVar}",
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
@@ -30,8 +29,11 @@ stage('build') {
 	     'REGION_NAME=us-west-1',
 	     'BRANCH_NAME=release-1.9'
             ]) {
-        def result = sh(script: 'echo $VAR1; echo $AWS_CLUSTER_NAME; echo $VAR2', returnStdout: true)
-        echo result
+        sh '''
+	echo $VAR1
+        echo $AWS_CLUSTER_NAME
+	echo $VAR2
+	'''
     }
 }
 }

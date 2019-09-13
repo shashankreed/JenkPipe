@@ -14,7 +14,7 @@ stage('build1') {
 stage('build2') {
     steps {
      ///  git url:"https://bitbucket.org/tekion/tfees.git", credentialsId: 'smganesha', branch: 'b7U'
-checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'Bitbucket_Tekion_Build', url: 'https://bitbucket.org/tekion/tappointment.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tappointment']], submoduleCfg: []])
+checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'smganesha', url: 'https://bitbucket.org/tekion/tappointment.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tappointment']], submoduleCfg: []])
     withEnv(['VAR1=VALUE ONE',
 	     'AWS_CLUSTER_NAME=ecs-devalpha-cluster',
 	     'SERVICE_NAME=tfees_ecsdev',

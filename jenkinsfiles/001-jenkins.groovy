@@ -27,7 +27,7 @@ cp tekionbuild/scripts/tekion-common-build.sh tappointment
 cp tekionbuild/scripts/nestedDependency.sh tappointment
 cd tappointment
 #bash -ex nestedDependency.sh
-echo "Test23"
+echo "Test2398"
 #cd vendor/bitbucket.org/tekion
 #rm -rf tappointment
 #rm -rf tbaas

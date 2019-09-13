@@ -1,10 +1,10 @@
 pipeline {
   agent any
-stages {
-     wrappers {
-        jdk('System')
-        golang('Main_go')
+    tools { 
+        jdk 'System'
+	golang 'Main_go' 
     }
+stages {
 stage('build1') {
 	steps{
     checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'smganesha', url: 'https://bitbucket.org/tekion/tekionbuild.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']], submoduleCfg: []])

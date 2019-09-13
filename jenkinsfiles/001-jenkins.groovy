@@ -7,7 +7,7 @@ pipeline {
 stages {
 stage('build1') {
 	steps{
-    checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'Bitbucket_Tekion_Build', url: 'https://bitbucket.org/tekion/tekionbuild.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']], submoduleCfg: []])
+    checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'smganesha', url: 'https://bitbucket.org/tekion/tekionbuild.git']], branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'RelativeTargetDirectory', relativeTargetDir: 'tekionbuild']], submoduleCfg: []])
 
 }
 }

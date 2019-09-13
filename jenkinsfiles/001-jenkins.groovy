@@ -28,13 +28,13 @@ cp tekionbuild/scripts/nestedDependency.sh tappointment
 cd tappointment
 #bash -ex nestedDependency.sh
 
-cd vendor/bitbucket.org/tekion
-rm -rf tappointment
+#cd vendor/bitbucket.org/tekion
+#rm -rf tappointment
 #rm -rf tbaas
 #git clone -b release-1.8.1 https://bitbucket.org/tekion/tbaas.git
 #rm -rf tscrittypes
 #git clone -b doubleOptIn https://bitbucket.org/tekion/tscrittypes.git
-cd ../../..
+#cd ../../..
 
 #bash -ex tekion-common-build.sh
 	'''

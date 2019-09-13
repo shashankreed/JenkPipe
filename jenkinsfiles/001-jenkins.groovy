@@ -2,6 +2,7 @@ pipeline {
   agent any
     tools { 
         jdk 'System'
+	go 'Main_go'
     }
 stages {
 stage('build1') {

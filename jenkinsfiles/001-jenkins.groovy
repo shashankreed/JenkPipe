@@ -26,6 +26,7 @@ checkout([$class: 'GitSCM', userRemoteConfigs: [[credentialsId: 'smganesha', url
 cp tekionbuild/scripts/tekion-common-build.sh tappointment
 cp tekionbuild/scripts/nestedDependency.sh tappointment
 cd tappointment
+#mark wahlberg
 #bash -ex nestedDependency.sh
 echo "Test2398"
 #cd vendor/bitbucket.org/tekion
